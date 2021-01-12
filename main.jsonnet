@@ -17,14 +17,15 @@ function(
     ISTIO_ENABLED=false,
     MSSQL_TAG='2019-latest',
     MSSQL_VERSION='Developer',
-    MSSQL_SA_PASSWORD
+    MSSQL_SA_PASSWORD,
+    MSSQL_DATA_PATH
 ) [
     namespace(NAMESPACE, ISTIO_ENABLED),
     configmap(NAME, NAMESPACE, MSSQL_VERSION, MSSQL_PORT),
     secret(NAME, NAMESPACE, MSSQL_SA_PASSWORD),
     service(NAME, NAMESPACE, MSSQL_PORT),
     storageclass(NAME, NAMESPACE),
-    persistentvolume(NAME, NAMESPACE, STORAGE, NODE),
+    persistentvolume(NAME, NAMESPACE, STORAGE, NODE, MSSQL_DATA_PATH),
     persistentvolumeclaim(NAME, NAMESPACE, STORAGE),
     deployment(NAME, NAMESPACE, MSSQL_TAG, MSSQL_PORT)
 ]

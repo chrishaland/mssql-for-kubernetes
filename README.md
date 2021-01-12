@@ -11,6 +11,7 @@ jsonnet \
   --tla-str MSSQL_TAG='2019-latest' \
   --tla-str MSSQL_VERSION='Developer' \
   --tla-str MSSQL_SA_PASSWORD='yourStrong(!)Password' \
+  --tla-str MSSQL_DATA_PATH='/run/desktop/mnt/host/d/wsl/volumes/mssql' \
   --yaml-stream \
   main.jsonnet | kubectl apply --filename -
 ```
