@@ -21,7 +21,7 @@ function(
     MSSQL_DATA_PATH
 ) [
     namespace(NAMESPACE, ISTIO_ENABLED),
-    configmap(NAME, NAMESPACE, MSSQL_VERSION, MSSQL_PORT),
+    configmap(NAME, NAMESPACE, MSSQL_VERSION),
     secret(NAME, NAMESPACE, MSSQL_SA_PASSWORD),
     service(NAME, NAMESPACE, MSSQL_PORT),
     storageclass(NAME, NAMESPACE),

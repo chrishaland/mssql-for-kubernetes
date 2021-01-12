@@ -1,4 +1,4 @@
-function(name, namespace, edition, port) {
+function(name, namespace, edition) {
     apiVersion: 'v1',
     kind: 'ConfigMap',
     metadata: {
@@ -7,7 +7,6 @@ function(name, namespace, edition, port) {
     },
     data: {
         accept_eula: 'Y',
-        mssql_pid: edition,
-        mssql_tcp_port: '%s' % port
+        mssql_pid: edition
     }
 }
