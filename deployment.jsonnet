@@ -53,12 +53,7 @@ function(name, namespace, version, port) {
                             },
                             {
                                 name: 'MSSQL_TCP_PORT',
-                                valueFrom: {
-                                    configMapKeyRef: {
-                                        name: name,
-                                        key: 'mssql_tcp_port'
-                                    }
-                                }
+                                value: '%s' % port
                             },
                             {
                                 name: 'MSSQL_SA_PASSWORD',
