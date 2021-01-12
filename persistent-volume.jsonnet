@@ -1,4 +1,4 @@
-function(name, namespace, storage, node) {
+function(name, namespace, storage, node, path) {
     apiVersion: 'v1',
     kind: 'PersistentVolume',
     metadata: {
@@ -13,7 +13,7 @@ function(name, namespace, storage, node) {
             storage: storage
         },
         "local": {
-            path: '/run/desktop/mnt/host/d/Chris/WSL/Volumes/' + name
+            path: path
         },
         nodeAffinity: {
             required: {
