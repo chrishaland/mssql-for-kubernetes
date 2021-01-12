@@ -79,7 +79,7 @@ function(name, namespace, version, port) {
                         volumeMounts: [
                             {
                                 name: 'data',
-                                mountPath: '/var/opt/mssql'
+                                mountPath: '/var/opt/mssql/data'
                             }
                         ]
                     }
