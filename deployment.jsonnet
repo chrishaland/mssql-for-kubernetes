@@ -21,11 +21,6 @@ function(name, namespace, version, port) {
                 }
             },
             spec: {
-                securityContext: {
-                    runAsUser: 6050,
-                    runAsGroup: 6060,
-                    fsGroup: 6070
-                },
                 containers: [
                     {
                         name: name,
