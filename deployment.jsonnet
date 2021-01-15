@@ -26,8 +26,8 @@ function(name, namespace, version, port) {
                         name: name,
                         image: 'mcr.microsoft.com/mssql/server:%s' % version,
                         resources: {
-                            requests: { memory: '2Gi', cpu: '10m' },
-                            limits: { memory: '2Gi', cpu: '10m' }
+                            requests: { memory: '2Gi', cpu: '250m' },
+                            limits: { memory: '4Gi', cpu: '500m' }
                         },
                         ports: [
                             { containerPort: port }
