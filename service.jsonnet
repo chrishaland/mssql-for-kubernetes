@@ -9,12 +9,12 @@ function(name, namespace, port) {
         },
     },
     spec: {
-        type: 'ClusterIP',
+        type: 'LoadBalancer',
         selector: {
             app: name
         },
         ports: [
-            { name: 'http', port: port }
+            { protocol: 'TCP', port: port }
         ],
     },
 }
