@@ -8,13 +8,13 @@ local persistentvolume = import 'persistent-volume.jsonnet';
 local persistentvolumeclaim = import 'persistent-volume-claim.jsonnet';
 
 local MSSQL_PORT = 1433;
+local ISTIO_ENABLED = false;
 
 function(
     NAME='mssql',
-    NAMESPACE='default',
+    NAMESPACE='mssql',
     NODE='docker-desktop',
     STORAGE='5Gi',
-    ISTIO_ENABLED=false,
     MSSQL_TAG='2019-latest',
     MSSQL_VERSION='Developer',
     MSSQL_SA_PASSWORD,
